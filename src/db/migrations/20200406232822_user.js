@@ -9,7 +9,7 @@ exports.up = function(knex) {
     table.string('phone').notNullable();
     table.date('dateBorn').notNullable();
     table.datetime('dateReg').notNullable().default(knex.fn.now());
-    table.boolean('estReg').notNullable();
+    table.boolean('estReg').notNullable().default(true);
   })
 };
 

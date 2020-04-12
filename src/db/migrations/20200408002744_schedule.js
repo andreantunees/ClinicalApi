@@ -8,7 +8,7 @@ exports.up = function(knex) {
         table.string('notes');
 
         table.datetime('dateReg').notNullable().default(knex.fn.now());
-        table.boolean('estReg').notNullable();
+        table.boolean('estReg').notNullable().default(true);
 
         table.foreign('user_id').references('id').inTable('user');
         table.foreign('doctor_id').references('id').inTable('doctor');

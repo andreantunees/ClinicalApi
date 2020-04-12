@@ -5,7 +5,7 @@ exports.up = function(knex) {
         table.string('description').notNullable();
 
         table.datetime('dateReg').notNullable().default(knex.fn.now());
-        table.boolean('estReg').notNullable();
+        table.boolean('estReg').notNullable().default(true);
     })
 };
 

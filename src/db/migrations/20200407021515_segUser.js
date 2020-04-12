@@ -6,12 +6,12 @@ exports.up = function (knex) {
         table.string('status');
         table.string('login').notNullable();
         table.string('pass').notNullable();
-        table.string('tkn').notNullable();
+        table.string('tkn');
         table.datetime('dateLastLogin');
 
         table.datetime('dateReg').notNullable().default(knex.fn.now());
-        table.boolean('estReg').notNullable();
-
+        table.boolean('estReg').notNullable().default(true);
+        
         table.foreign('user_id').references('id').inTable('user');
     })
 };

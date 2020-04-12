@@ -6,7 +6,7 @@ exports.up = function(knex) {
         table.integer('consult_id').notNullable();
 
         table.datetime('dateReg').notNullable().default(knex.fn.now());
-        table.boolean('estReg').notNullable();
+        table.boolean('estReg').notNullable().default(true);
 
         table.foreign('symptom_id').references('id').inTable('symptom');
         table.foreign('consult_id').references('id').inTable('consult');
